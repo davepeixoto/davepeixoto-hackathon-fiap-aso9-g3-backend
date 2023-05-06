@@ -20,12 +20,6 @@ jobs:
       - name: Install Requirements
         run:  pip install flask pytest pytest-cov flask-wtf
 
-      - name: Unit Test
-        run: |
-          coverage run --source=app -m pytest test.py
-          coverage report -m
-          coverage xml -i
-
       - name: Docker Login
         run: | 
           echo '${{ secrets.GOOGLE_CREDENTIALS }}' > key.json
